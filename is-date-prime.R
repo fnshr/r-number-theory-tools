@@ -8,6 +8,9 @@ dates <- as.Date(0:(num_of_dates-1), origin = start_date)
 
 
 disp_prime_date <- function(x, cal="AD"){
+  if(!inherits(x, "Date")){ # to avoid non-Date input
+    stop("Invalid input")
+  }
   y <- as.integer(format(x, "%Y")) # Year in AD
   if(cal == "Heisei"){
     y <- y - 1988
