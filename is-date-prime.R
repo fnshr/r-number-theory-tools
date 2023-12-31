@@ -14,6 +14,8 @@ disp_prime_date <- function(x, cal="AD"){
   y <- as.integer(format(x, "%Y")) # Year in AD
   if(cal == "Heisei"){
     y <- y - 1988
+  } else if(cal == "Reiwa"){
+    y <- y - 2018
   } else if(cal == "Kouki"){
     y <- y + 660
   } else if(cal != "AD"){
